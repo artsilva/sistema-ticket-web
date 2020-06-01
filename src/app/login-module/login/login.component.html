@@ -1,0 +1,40 @@
+<div class="flex-container">
+
+    <mat-card class="flex-item">
+
+        <div class="left">
+            <div class="title-image">{{title}}</div>
+        </div>
+
+        <div class="center">
+
+            <h1>Bienvenido</h1>
+
+            <form class="container-login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <mat-form-field class="space-component">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Ingrese su usuario" formControlName="user">
+                </mat-form-field>
+
+                <mat-form-field class="space-component">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="Ingrese su constraseña" formControlName="password">
+                </mat-form-field>
+
+                <small class="msj-error" *ngIf="(loginForm.controls.password.touched && loginForm.controls.password.errors?.required)
+                    || loginForm.controls.user.touched && loginForm.controls.user.errors?.required">
+                    Ingrese ambos campos antes de continuar.
+                </small>
+
+                <div class="space-component">
+                    <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Log In</button>
+                </div>                
+
+            </form>
+
+        </div>
+
+    </mat-card>
+
+</div>

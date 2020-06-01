@@ -1,0 +1,69 @@
+.center {
+    /* margin: auto; */
+    width: 60%;
+}
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-item {
+    padding: 0px;
+    text-align: center;
+    width: 45%;
+    height: 70%;
+}
+
+h1 {
+    padding: 40px 100px 20px 100px;
+    color: #141212af;
+}
+
+.left {
+    width: 40%;
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    background-image: url("../../../assets/images/background-login.jpeg");
+    background-size: cover;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.mat-card {
+    min-width: 500px;
+    min-height: 420px;
+    border-radius: 20px;
+    box-shadow: 5px 8px 8px #99999999 !important;
+    display: flex;
+    flex-direction: row;
+}
+
+.msj-error {
+    padding-top: 10px;
+    color: #333333be;
+}
+
+.space-component {
+    padding: 20px 80px 0px 80px
+}
+
+.title-image {
+    color: #ffffff;
+    padding-top: 20%;
+}
