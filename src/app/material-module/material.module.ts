@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule, MatToolbarModule, MatSliderModule } from '@angular/material';
+import { MatNativeDateModule, MatToolbarModule, MatSliderModule, MatSidenavModule } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -39,7 +39,8 @@ const modules = [
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSidenavModule
 ];
 const providers = [];
 
