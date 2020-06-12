@@ -1,0 +1,129 @@
+mat-card .form {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.margin-iconletter {
+    margin-top: 15px !important;
+}
+
+.text-card {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: gray;
+    font-weight: 550;
+    /* text-shadow: 2px 2px 2px black; */
+}
+
+.i-circle {
+    /* background: white;
+    color: dodgerblue; */
+    background: purple;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.title-letter {
+    color: gray;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+
+.space-between {
+    margin: 30px 0px 30px 0px !important;
+}
+
+.cards {
+    max-width: 100%;
+    margin: 10px;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.card {
+    /* background-color: dodgerblue; */
+    /* color: white; */
+    padding: 1rem;
+    height: 4rem;
+}
+
+.card:hover {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+}
+
+.items {
+    max-width: 100%;
+    margin: 10px;
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+.item {
+    padding: 1rem;
+    height: 4rem;
+}
+
+.full-width {
+    width: 90%
+}
+
+mat-form-field {
+    margin: 10px;
+}
+
+.card-info {
+    width: 20%;
+    margin-right: 1.2em !important;
+}
+
+.card-form {
+    width: 80%
+}
+
+.image-ticket {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    background-image: url("../../../assets/images/create-ticket.png");
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    /* border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; */
+}
+
+.center {
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 800px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 950px) {
+    .cards {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

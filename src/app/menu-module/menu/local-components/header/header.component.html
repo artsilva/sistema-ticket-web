@@ -3,6 +3,9 @@
     <mat-icon>menu</mat-icon>
   </button>
   <h1 class="fill-remaining-space app-name">{{ title }}</h1>
+  <div class="username">
+    <p>Usuario Prueba</p>
+  </div>
   <mat-icon>home</mat-icon>
   <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
 </mat-toolbar>

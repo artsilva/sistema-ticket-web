@@ -1,1 +1,118 @@
-<p>create-ticket works!</p>
+<div class="title-letter">CLASES DE SERVICIO</div>
+<mat-divider></mat-divider>
+<div class="cards space-between">
+    <mat-card class="card">
+        <div class="margin-iconletter">
+            <span class="i-circle">S</span>
+        </div>
+        <div>
+            <span class="text-card">Soporte</span>
+        </div>
+    </mat-card>
+    <mat-card class="card">
+        <div class="margin-iconletter">
+            <span class="i-circle">R</span>
+        </div>
+        <div>
+            <span class="text-card">Registro Personas</span>
+        </div>
+    </mat-card>
+    <mat-card class="card">
+        <div class="margin-iconletter">
+            <span class="i-circle">B</span>
+        </div>
+        <div>
+            <span class="text-card">Bodega</span>
+        </div>
+    </mat-card>
+    <mat-card class="card">
+        <div class="margin-iconletter">
+            <span class="i-circle">D</span>
+        </div>
+        <div>
+            <span class="text-card">Desarrollo</span>
+        </div>
+    </mat-card>
+    <mat-card class="card">
+        <div class="margin-iconletter">
+            <span class="i-circle">C</span>
+        </div>
+        <div>
+            <span class="text-card">Casino</span>
+        </div>
+    </mat-card>
+</div>
+
+<div class="title-letter">SOLICITUD RAPIDA</div>
+<mat-divider></mat-divider>
+
+<div style="display: flex; "> 
+    <mat-card class="card-info space-between">
+        <!-- <div class="image-ticket center"></div> -->
+    </mat-card>
+    <mat-card class="card-form space-between">
+        <form class="items" action="">
+            <div class="item">
+                <mat-form-field class="full-width">
+                    <mat-label>Titulo</mat-label>
+                    <input matInput placeholder="Ingrese titulo de la solicitud" value="">
+                </mat-form-field>
+            </div>
+            <div class="item">
+                <mat-form-field class="full-width">
+                    <mat-label>Solicitante</mat-label>
+                    <mat-select [(ngModel)]="selectedPetitioner" name="petitioner">
+                        <mat-option *ngFor="let p of petitioners" [value]="p">
+                            {{p.description}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="item">
+                <mat-form-field class="full-width">
+                    <mat-label>Lugar</mat-label>
+                    <mat-select [(ngModel)]="selectedAreas" name="area">
+                        <mat-option *ngFor="let a of areas" [value]="a">
+                            {{a.description}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="item">
+                <mat-form-field class="full-width">
+                    <mat-label>Tipo</mat-label>
+                    <mat-select [(ngModel)]="selectedType" name="type">
+                        <mat-option *ngFor="let t of types" [value]="t">
+                            {{t.description}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="item">
+                <mat-form-field class="full-width">
+                    <mat-label>Email adicionales</mat-label>
+                    <input matInput placeholder="Ingrese mail adicional" value="">
+                </mat-form-field>
+            </div>
+            <div class="item">
+                <mat-form-field class="full-width">
+                    <mat-label>Descripción</mat-label>
+                    <textarea matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="4"></textarea>
+                </mat-form-field>
+            </div>
+        </form>
+
+    </mat-card>
+    
+</div>
+
+<div class="align-right margin-bottom">
+    <app-principal-button [title]="cleanButton" [primary]="false"></app-principal-button>
+
+    <app-principal-button [title]="acceptButton" [primary]="true"></app-principal-button>
+</div>
+

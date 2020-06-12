@@ -1,3 +1,4 @@
+import { FooterComponent } from './menu/local-components/footer/footer.component';
 import { MaterialModule } from './../material-module/material.module';
 import { HeaderComponent } from './menu/local-components/header/header.component';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,8 @@ import { MenuComponent } from './menu/menu.component';
 @NgModule({
   declarations: [
     MenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
