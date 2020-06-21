@@ -12,29 +12,29 @@
 .is-mobile .toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-  z-index: 2;
+  z-index: 2;  
 }
 
 .is-mobile .sidenav-container {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
-  flex: 1 0 auto;
+  flex: 1 0 auto;  
+  position: absolute;
 }
 
 a.menu {
-  color: gray;
+  color: white;
   font-weight: 550;  
 }
 
-.sidenav-container {
-  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-  flex: 1;
-  min-height: 700px;
+mat-sidenav {
+  background-color: darkslategrey;
+  color: white;
 }
 
-.icon-padding-right {
+.icon {
   padding-right: 5px;
+  color: white;
 }
 
 .header-img {
@@ -42,4 +42,19 @@ a.menu {
   height: 200px;
   background: url('http://www.kodhus.com/freecourse-images/header-image.jpg');
   background-size: cover;
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+  /* min-height: 800px; */
+  height: 92vh;
+}
+
+@media (min-height: 800px) {
+  .sidenav-container {
+    flex: 1;
+    height: 95vh;
+  }
 }

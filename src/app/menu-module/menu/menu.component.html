@@ -1,16 +1,20 @@
 <div [class.is-mobile]="mobileQuery.matches">
 
-    <app-header (emitToggle)="eventoClickHeader($event)"></app-header>    
+    <app-header (emitToggle)="eventoClickHeader($event)"></app-header>
 
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
 
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-            fixedTopGap="56" >
+            fixedTopGap="56">
             <mat-nav-list>
-                <a class="menu" mat-list-item routerLink="creacion" *ngFor="let nav of fillerNav">
-                    <div>
-                        <mat-icon class="icon-padding-right icon-file" svgIcon="create"></mat-icon>
-                        {{nav.label}}
+                <a class="menu" mat-list-item [routerLink]="nav.router" *ngFor="let nav of fillerNav">
+                    <div style="display: flex;">
+                        <div>
+                            <mat-icon class="icon" [svgIcon]="nav.icon"></mat-icon>
+                        </div>
+                        <div>
+                            {{nav.label}}
+                        </div>
                     </div>
                 </a>
             </mat-nav-list>

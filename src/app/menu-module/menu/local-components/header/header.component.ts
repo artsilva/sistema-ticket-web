@@ -11,11 +11,13 @@ export class HeaderComponent implements OnInit {
   @Output()
   emitToggle: EventEmitter<string> = new EventEmitter<string>();
   title: string;
+  user: string;
 
   constructor(public auth: AuthService) { }
 
   ngOnInit() {
     this.title = 'SISTEMA TICKET';
+    this.user = 'usuario prueba';
   }
 
   emitClickBurger() {

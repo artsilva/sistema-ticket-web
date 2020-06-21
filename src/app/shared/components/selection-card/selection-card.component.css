@@ -1,0 +1,43 @@
+.margin-iconletter {
+    margin-top: 15px !important;
+}
+
+.card {
+    /* background-color: dodgerblue; */
+    /* color: white; */
+    padding: 1rem;
+    height: 4rem;
+}
+
+.card:hover {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+}
+
+.i-circle {
+    /* background: white;
+    color: dodgerblue; */
+    background: lightsteelblue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.text-card {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: gray;
+    font-weight: 550;
+    /* text-shadow: 2px 2px 2px black; */
+}
+
+.number-card {
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+    color: blueviolet;    
+    font-weight: 700;
+    font-size: 20px;
+    /* text-shadow: 2px 2px 2px black; */
+}

@@ -1,0 +1,16 @@
+<mat-card class="card">
+
+    <div class="margin-iconletter">
+        <span class="i-circle">{{ letter | titlecase}}</span>
+    </div>
+    
+    <div>
+        <div *ngIf="cardNumber" class="number-card">
+            {{ cardNumber }}
+        </div>
+        <div>
+            <span class="text-card">{{ cardTitle | titlecase }}</span>
+        </div>            
+    </div>
+
+</mat-card>

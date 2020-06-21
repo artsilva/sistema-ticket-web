@@ -6,7 +6,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 
 .container {
     padding: 1.2em;
-    min-height: 90vh;
+    min-height: 100vh;
 }
 
 .align-right {
@@ -15,4 +15,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 
 .margin-bottom {
     margin-bottom: 0.8em;
+}
+
+.space-between {
+    margin: 30px 0px 30px 0px !important;
+}
+
+.mat-table th {
+    color: blueviolet;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mat-table td {
+    color: gray;
+}
+
+.title-letter {
+    color: gray;
+    font-weight: 550;
+    letter-spacing: 1px;
 }

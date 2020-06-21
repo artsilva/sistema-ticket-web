@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateTicketComponent implements OnInit {
 
+  titleCards: string;
+  titleForm: string;
   acceptButton = 'Crear';
   cleanButton = 'Limpiar Formulario';
   petitioners: BasicObject[] = [];
@@ -23,6 +25,8 @@ export class CreateTicketComponent implements OnInit {
   }
 
   initValues() {
+    this.titleCards = 'clases de servicio';
+    this.titleForm = 'solicitud rápida';
     this.petitioners = [
       { code: 1, description: 'Carlos Lara' },
       { code: 1, description: 'Camila Oses' },

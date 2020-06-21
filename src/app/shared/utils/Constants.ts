@@ -1,7 +1,7 @@
 export class Constants {
 
-    public static get ICON_USER(): string {
-        return '../../../assets/icons/user/face-black-18dp.svg';
+    public static get MSJ_EMPTY_TABLE(): string {
+        return 'No se encontraron datos';
     }
 
 }

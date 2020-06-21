@@ -1,0 +1,34 @@
+<app-principal-title [title]="title"></app-principal-title>
+
+<div class="container-form space-between">
+
+    <mat-card class="card-info">
+        <p class="title-letter">INFORMACIÓN DE LA SOLUCITUD</p>
+        <mat-divider></mat-divider>
+    </mat-card>
+
+    <mat-card class="card-chat">
+        <p class="title-letter">CENTRO DE MENSAJES</p>
+        <mat-divider></mat-divider>
+        <mat-card-subtitle>aquí puede ponerse en contacto con el usuario del Ticket</mat-card-subtitle>
+        <div class="chat">
+            <div class="content-chat">
+                <mat-card *ngFor="let m of messages" [ngClass]="{'message-right': m.type === 1, 'message-left': m.type === 2}">
+                    {{ m.description }}
+                </mat-card>
+                <div class="container-form">
+                    <mat-form-field class="send-chat" appearance="outline">
+                        <mat-label>Escriba un mensaje</mat-label>
+                        <textarea matInput resizeToFitContent cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+                    </mat-form-field >
+                    <div class="send-chat-button" >
+                        <app-principal-button title="enviar" primary="true"></app-principal-button>
+                    </div>                    
+                </div>                
+            </div>
+        </div>
+    </mat-card>
+
+</div>
+
+<!-- <p>{{currentTicket$ | async | json}}</p> -->
