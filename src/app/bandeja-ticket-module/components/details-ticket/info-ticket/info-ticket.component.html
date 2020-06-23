@@ -1,0 +1,38 @@
+<div>
+
+    <div class="container-flex space-between-field-p">
+        <div class="wd-20">
+            <div class="letter-title">Titulo:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).title}}</div>
+        </div>
+        <div class="wd-20">
+            <div class="letter-title">Solicitante:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).petitioner}}</div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <div class="wd-95 space-between-field-p letter-title">Detalles:</div>
+        </div>
+        <div class="info-content">
+            <div class="wd-95 space-between-field-s letter-desc">{{(currentTicket$ | async).details}}</div>
+        </div>
+    </div>
+    
+</div>
+
+<!-- id: number;
+  status: string;
+  title: string;
+  tech: string;
+  petitioner: string;
+  creation: string;
+  expire: string;
+  action: string;
+  details: string; -->
+

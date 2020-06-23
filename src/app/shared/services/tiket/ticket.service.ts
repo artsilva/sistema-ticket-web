@@ -1,4 +1,4 @@
-import { Ticket } from './../models/ticket';
+import { Ticket } from '../../models/ticket';
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 

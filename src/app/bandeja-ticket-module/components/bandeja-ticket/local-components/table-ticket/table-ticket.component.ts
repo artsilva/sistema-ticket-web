@@ -1,5 +1,5 @@
 import { Ticket } from './../../../../../shared/models/ticket';
-import { TicketService } from './../../../../../shared/services/ticket.service';
+import { TicketService } from '../../../../../shared/services/tiket/ticket.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -33,7 +33,7 @@ export class TableTicketComponent implements OnInit {
 
   ngOnInit() {
     const items = [
-      {id: 1, status: 'En Proceso', title: 'Orden de servicio', tech: 'Ivan Arenas', petitioner: 'Camila Pino', creation: '12-12-12', expire: '12-12-12', action: '', details: 'Solicitud ejemplo 1'},
+      {id: 1, status: 'En Proceso', title: 'Orden de servicio', tech: 'Ivan Arenas', petitioner: 'Camila Pino', creation: '12-12-12', expire: '12-12-12', action: '', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultricies molestie mattis. Mauris porttitor elit id erat egestas, ac consequat justo placerat. In ac nibh non libero volutpat maximus vitae sed nibh.  Mauris porttitor elit id erat egestas, ac consequat justo placerat. In ac nibh non libero volutpat maximus vitae sed nibh.'},
       {id: 2, status: 'En Proceso', title: 'asdf', tech: 'Pedro Perez', petitioner: 'Ivan Vargas', creation: '12-12-12', expire: '12-12-12', action: '', details: 'Solicitud ejemplo 1'},
       {id: 3, status: 'Sin Asignar', title: 'asdf', tech: '', petitioner: 'Renato Apablaza', creation: '12-12-12', expire: '12-12-12', action: '', details: 'Solicitud ejemplo 1'},
       {id: 4, status: 'Sin Asignar', title: 'Petición de sillas nuevas', tech: '', petitioner: 'Renato Apablaza', creation: '12-12-12', expire: '12-12-12', action: '', details: 'Solicitud ejemplo 1'},

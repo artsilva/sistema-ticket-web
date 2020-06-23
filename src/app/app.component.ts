@@ -64,5 +64,17 @@ export class AppComponent {
       'forward-white',
       this.domSanitizer.bypassSecurityTrustResourceUrl(Icons.FORWARD_WHITE)
     );
+    this.matIconRegistry.addSvgIcon(
+      'file-pdf-blue',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(Icons.BLUE_FILE_PDF)
+    );
+    this.matIconRegistry.addSvgIcon(
+      'file-image-blue',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(Icons.BLUE_FILE_IMAGE)
+    );
+    this.matIconRegistry.addSvgIcon(
+      'file-text-blue',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(Icons.BLUE_FILE_TEXT)
+    );
   }
 }

@@ -1,5 +1,4 @@
-import { Constants } from './../../shared/utils/Constants';
-import { Component, OnInit } from '@angular/core';
+import { OnInit, Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -11,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   title: string;
+  hide = true;
   loginForm: FormGroup;
 
   constructor(private router: Router) { }

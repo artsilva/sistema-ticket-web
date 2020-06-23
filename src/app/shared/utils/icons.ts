@@ -46,4 +46,18 @@ export class Icons {
     public static get FORWARD_WHITE(): string {
         return '../../../assets/icons/misc/forward-white-18dp.svg';
     }
+
+    public static get BLUE_FILE_PDF(): string {
+        return '../../../assets/icons/files/picture_as_pdf-white-18dp.svg';
+    }
+
+    public static get BLUE_FILE_IMAGE(): string {
+        return '../../../assets/icons/files/photo_library-white-18dp.svg';
+    }
+
+    public static get BLUE_FILE_TEXT(): string {
+        return '../../../assets/icons/files/file_copy-white-18dp.svg';
+    }
+
+
 }
