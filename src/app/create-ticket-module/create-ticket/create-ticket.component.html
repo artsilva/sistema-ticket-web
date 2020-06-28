@@ -26,27 +26,7 @@
                 </div>
                 <div class="item">
                     <mat-form-field class="full-width">
-                        <mat-label>Solicitante</mat-label>
-                        <mat-select [(ngModel)]="selectedPetitioner" name="petitioner">
-                            <mat-option *ngFor="let p of petitioners" [value]="p">
-                                {{p.description}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="item">
-                    <mat-form-field class="full-width">
-                        <mat-label>Lugar</mat-label>
-                        <mat-select [(ngModel)]="selectedAreas" name="area">
-                            <mat-option *ngFor="let a of areas" [value]="a">
-                                {{a.description}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="item">
-                    <mat-form-field class="full-width">
-                        <mat-label>Motivo</mat-label>
+                        <mat-label>Tipo Solicitud</mat-label>
                         <mat-select [(ngModel)]="selectedReason" name="type">
                             <mat-option *ngFor="let r of reasons" [value]="r">
                                 {{r.description}}
@@ -56,15 +36,15 @@
                 </div>
                 <div class="item">
                     <mat-form-field class="full-width">
-                        <mat-label>Email adicionales</mat-label>
-                        <input matInput placeholder="Ingrese mail adicional" value="">
+                        <mat-label>Descripción</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="4"></textarea>
                     </mat-form-field>
                 </div>
                 <div class="item">
                     <mat-form-field class="full-width">
-                        <mat-label>Descripción</mat-label>
-                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                            cdkAutosizeMaxRows="4"></textarea>
+                        <mat-label>Email adicionales</mat-label>
+                        <input matInput placeholder="Ingrese mail adicional" value="">
                     </mat-form-field>
                 </div>
             </form>
@@ -80,11 +60,25 @@
             </div>
             <p class="title-letter">SUBIDA DE DOCUMENTOS</p>
             <mat-divider></mat-divider>
-            <mat-card-subtitle>Suba un archivo desde su computador</mat-card-subtitle>
+            <mat-card-subtitle></mat-card-subtitle>
             <div>
-                <input #csvInput hidden="true" type="file" onclick="this.value=null" (change)="csvInputChange($event)"
+                <!-- <input #csvInput hidden="true" type="file" onclick="this.value=null" (change)="csvInputChange($event)"
                     accept=".csv" />
-                <button mat-flat-button color="primary" (click)="csvInput.click()">Adjuntar</button>
+                <button mat-flat-button color="primary" (click)="csvInput.click()">Adjuntar</button> -->
+                <mat-expansion-panel [expanded]="false">
+                <!-- <mat-expansion-panel [expanded]="this.solicitudService.getDocumentos.length > 0"> -->
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Documentos
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Ingresar documentación para solicitud
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                
+                    <app-general-uploadfile></app-general-uploadfile>
+                
+                  </mat-expansion-panel>
             </div>
         </mat-card>
 

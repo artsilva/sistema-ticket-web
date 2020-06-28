@@ -27,13 +27,41 @@ export class MessageService {
     });
   }
 
-  showModal(title: string, html: string, icon: 'error' | 'warning' | 'success' | 'info') {
+  showModal(
+    title: string,
+    html: string,
+    icon: 'error' | 'warning' | 'success' | 'info'
+  ) {
     Swal.fire({
       title,
       html,
       icon,
-      confirmButtonColor: '#009999'
+      confirmButtonColor: '#009999',
+      allowOutsideClick: false,
     });
   }
 
+  async showModalTextArea(title: string) {
+    return Swal.fire({
+      title,
+      input: 'textarea',
+      inputPlaceholder: 'Ingrese el motivo aquí...',
+      inputAttributes: {
+        'aria-label': 'Ingrese el motivo aquí',
+      },
+      showCancelButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      onOpen: () => {
+        Swal.disableButtons();
+        Swal.getInput().addEventListener('keyup', (e) => {
+          if (e.target) {
+            Swal.enableButtons();
+          } else {
+            Swal.disableButtons();
+          }
+        });
+      },
+    });
+  }
 }

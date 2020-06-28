@@ -14,7 +14,7 @@ export class CreateTicketComponent implements OnInit {
 
   titleCards: string;
   titleForm: string;
-  acceptButton = 'Crear';
+  acceptButton = 'Crear Solicitud';
   cleanButton = 'Limpiar Formulario';
   petitioners: BasicObject[] = [];
   selectedPetitioner: BasicObject;
@@ -81,6 +81,6 @@ export class CreateTicketComponent implements OnInit {
   }
 
   createTicket() {
-    this.messageService.messageToast(Constants.SUCCESS, Constants.MSJ_SUCCESS, 4000);
+    this.messageService.messageToast(Constants.SUCCESS, Constants.MSJ_SOLITUDE_SUCCESS, 4000);
   }
 }

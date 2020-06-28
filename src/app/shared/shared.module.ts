@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrincipalTitleComponent } from './components/principal-title/principal-title.component';
 import { AttachmentCardComponent } from './components/attachment-card/attachment-card.component';
+import { GeneralUploadfileComponent } from './components/general-uploadfile/general-uploadfile.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AttachmentCardComponent } from './components/attachment-card/attachment
     SelectionCardComponent,
     PrincipalTitleComponent,
     AttachmentCardComponent,
-    LoadingComponent
+    LoadingComponent,
+    GeneralUploadfileComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { AttachmentCardComponent } from './components/attachment-card/attachment
     SelectionCardComponent,
     PrincipalTitleComponent,
     AttachmentCardComponent,
-    LoadingComponent
+    LoadingComponent,
+    GeneralUploadfileComponent
   ],
   providers: [
     TicketService
