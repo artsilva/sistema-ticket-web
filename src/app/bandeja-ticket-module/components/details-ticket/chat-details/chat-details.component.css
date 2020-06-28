@@ -1,0 +1,47 @@
+.container-form {
+    display: flex;
+}
+
+.content-chat {
+    padding: 20px;
+}
+
+.message-left {
+    width: 95%;
+    border-radius: 30px;
+    text-align: left;
+    margin-bottom: 20px;
+    background-color:#ffffff;
+}
+
+.message-right {
+    width: 95%;
+    border-radius: 30px;
+    text-align: right;
+    margin-bottom: 20px;
+    background-color: #e8fdea;
+}
+
+.send-chat {
+    /* background: white; */    
+    width: 80%;
+}
+
+.send-chat-button {    
+    padding-top: 15px;
+    width: 10%;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline:hover {
+    border-color: lime;
+}
+
+.letter-desc {
+    color: gray;
+}
+

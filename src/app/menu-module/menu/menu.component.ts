@@ -17,12 +17,10 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
-    private media: MediaMatcher) {
-      this.setMobileQuery();
-    }
+    private media: MediaMatcher) { }
 
   ngOnInit() {
-    // this.setMobileQuery();
+    this.setMobileQuery();
     this.setFillerNav();
   }
 
@@ -46,6 +44,5 @@ export class MenuComponent implements OnInit, OnDestroy {
       { router: 'creacion', label: 'Creación de Ticket', icon: 'plus-white'},
       { router: 'bandeja', label: 'Bandeja de Ticket', icon: 'tray-white' }
     ];
-    console.log(this.fillerNav);
   }
 }

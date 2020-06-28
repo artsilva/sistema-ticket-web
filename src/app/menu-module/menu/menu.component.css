@@ -28,7 +28,8 @@ a.menu {
 }
 
 mat-sidenav {
-  background-color: darkslategrey;
+  /* background-color: rgba(10, 14, 42, 0.794); */
+  background-image: linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% );
   color: white;
 }
 
@@ -44,17 +45,21 @@ mat-sidenav {
   background-size: cover;
 }
 
+mat-divider {
+  background-color:rgba(60, 63, 85, 0.479);
+}
+
 .sidenav-container {
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
   /* min-height: 800px; */
-  height: 92vh;
+  min-height: 100vh;
 }
 
 @media (min-height: 800px) {
   .sidenav-container {
     flex: 1;
-    height: 95vh;
+    min-height: 95vh;
   }
 }

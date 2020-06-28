@@ -3,7 +3,7 @@
   <ng-container matColumnDef="icon">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">
-      <mat-icon [svgIcon]="element.icon"></mat-icon>
+      <mat-icon class="status-icon" [svgIcon]="element.icon"></mat-icon>
     </td>
   </ng-container>
   <!-- Position Column -->
@@ -48,9 +48,12 @@
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef>acción</th>
     <td mat-cell *matCellDef="let row">
-      <mat-icon svgIcon="play-green" (click)="startTicket(row)"></mat-icon>
-      <mat-icon svgIcon="pause-yellow" (click)="pauseTicket(row)"></mat-icon>
-      <mat-icon svgIcon="stop-red" (click)="stopTicket(row)"></mat-icon>
+      <mat-icon class="icon-effect" matTooltip="Iniciar Solicitud" matTooltipClass="tooltip-blue" svgIcon="play-green"
+        (click)="changeStatusTicket(row, 'start')" *ngIf="row.status !== 'En Proceso'"></mat-icon>
+      <mat-icon class="icon-effect" matTooltip="Pausar Solicitud" matTooltipClass="tooltip-blue" svgIcon="pause-yellow"
+        (click)="changeStatusTicket(row, 'pause')" *ngIf="row.status !== 'En Espera'&& row.status !== 'Sin Asignar'"></mat-icon>
+      <mat-icon class="icon-effect" matTooltip="Detener Solicitud" matTooltipClass="tooltip-blue" svgIcon="stop-red"
+        (click)="changeStatusTicket(row, 'stop')" *ngIf="row.status !== 'Detenido'"></mat-icon>
     </td>
   </ng-container>
 
@@ -58,7 +61,7 @@
     <th mat-header-cell *matHeaderCellDef> Detalles </th>
     <td mat-cell *matCellDef="let row">
       <!-- <button mat-raised-button color="primary" (click)="viewDetails()">ver</button> -->
-      <mat-icon svgIcon="forward-white" (click)="viewDetails(row)"></mat-icon>
+      <mat-icon class="details-icon" svgIcon="forward-white" (click)="viewDetails(row)"></mat-icon>
     </td>
   </ng-container>
 

@@ -1,5 +1,6 @@
 export class Ticket {
   id: number;
+  icon?: string;
   status: string;
   title: string;
   tech: string;
@@ -8,6 +9,7 @@ export class Ticket {
   expire: string;
   action: string;
   details: string;
+  reason?: string;
 
   constructor(
     id: number,
@@ -18,7 +20,8 @@ export class Ticket {
     creation: string,
     expire: string,
     action: string,
-    details: string
+    details: string,
+    reason?: string
   ) {
     this.id = id;
     this.status = status;
@@ -29,5 +32,6 @@ export class Ticket {
     this.expire = expire;
     this.action = action;
     this.details = details;
+    this.reason = reason;
   }
 }

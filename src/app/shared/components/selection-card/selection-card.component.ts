@@ -11,6 +11,9 @@ export class SelectionCardComponent implements OnInit {
   cardTitle: string;
 
   @Input()
+  selected: boolean;
+
+  @Input()
   cardNumber: string;
 
   letter: string;

@@ -4,17 +4,18 @@
 
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
 
-        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+        <mat-sidenav #snav opened="true" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
             fixedTopGap="56">
             <mat-nav-list>
                 <a class="menu" mat-list-item [routerLink]="nav.router" *ngFor="let nav of fillerNav">
-                    <div style="display: flex;">
+                    <div class="container-flex">
                         <div>
                             <mat-icon class="icon" [svgIcon]="nav.icon"></mat-icon>
                         </div>
                         <div>
                             {{nav.label}}
                         </div>
+                        <mat-divider></mat-divider>
                     </div>
                 </a>
             </mat-nav-list>

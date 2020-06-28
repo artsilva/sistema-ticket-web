@@ -1,7 +1,7 @@
-<mat-card class="card">
+<mat-card [ngClass]="selected === true ? 'card-selected' : 'card'">
 
     <div class="margin-iconletter">
-        <span class="i-circle">{{ letter | titlecase}}</span>
+        <span [ngClass]="selected === true ? 'i-circle-selected' : 'i-circle'">{{ letter | titlecase}}</span>
     </div>
     
     <div>
@@ -9,7 +9,7 @@
             {{ cardNumber }}
         </div>
         <div>
-            <span class="text-card">{{ cardTitle | titlecase }}</span>
+            <span [ngClass]="selected === true ? 'text-card-selected' : 'text-card'">{{ cardTitle | titlecase }}</span>
         </div>            
     </div>
 

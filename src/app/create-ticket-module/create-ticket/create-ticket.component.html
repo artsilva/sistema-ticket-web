@@ -1,85 +1,93 @@
-<app-principal-title [title]="titleCards"></app-principal-title>
-<div class="cards space-between">
+<div>
+    <app-principal-title [title]="titleCards"></app-principal-title>
 
-    <app-selection-card cardTitle="soporte"></app-selection-card>
-    <app-selection-card cardTitle="registro personas"></app-selection-card>
-    <app-selection-card cardTitle="bodega"></app-selection-card>
-    <app-selection-card cardTitle="desarrollo"></app-selection-card>
-    <app-selection-card cardTitle="casino"></app-selection-card>
-    
+    <mat-card-subtitle>Seleccione un servicio para su solicitud.</mat-card-subtitle>
+
+    <div class="cards space-between">
+
+        <app-selection-card *ngFor="let s of services" [cardTitle]="s.description" [selected]="s.selected"
+            (click)="selectionCard(s)"></app-selection-card>
+
+    </div>
+
+    <app-principal-title [title]="titleForm"></app-principal-title>
+
+    <div class="container-form">
+
+        <mat-card class="card-form space-between">
+            <p class="title-letter">FORMULARIO DE SOLICITUD</p>
+            <mat-divider></mat-divider>
+            <form class="items" action="">
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Titulo</mat-label>
+                        <input matInput placeholder="Ingrese titulo de la solicitud" value="">
+                    </mat-form-field>
+                </div>
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Tipo Solicitud</mat-label>
+                        <mat-select [(ngModel)]="selectedReason" name="type">
+                            <mat-option *ngFor="let r of reasons" [value]="r">
+                                {{r.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Descripción</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="4"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Email adicionales</mat-label>
+                        <input matInput placeholder="Ingrese mail adicional" value="">
+                    </mat-form-field>
+                </div>
+            </form>
+
+        </mat-card>
+
+        <mat-card class="card-info space-between">
+            <p class="title-letter">DOCUMENTOS OBLIGATORIOS SOLICITUD</p>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle>Haga click en un documento para descargar en su computador</mat-card-subtitle>
+            <div>
+                <app-attachment-card *ngFor="let file of files" [file]="file"></app-attachment-card>
+            </div>
+            <p class="title-letter">SUBIDA DE DOCUMENTOS</p>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle></mat-card-subtitle>
+            <div>
+                <!-- <input #csvInput hidden="true" type="file" onclick="this.value=null" (change)="csvInputChange($event)"
+                    accept=".csv" />
+                <button mat-flat-button color="primary" (click)="csvInput.click()">Adjuntar</button> -->
+                <mat-expansion-panel [expanded]="false">
+                <!-- <mat-expansion-panel [expanded]="this.solicitudService.getDocumentos.length > 0"> -->
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Documentos
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Ingresar documentación para solicitud
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                
+                    <app-general-uploadfile></app-general-uploadfile>
+                
+                  </mat-expansion-panel>
+            </div>
+        </mat-card>
+
+    </div>
+
+    <div class="align-right margin-bottom">
+        <app-principal-button [title]="cleanButton" [primary]="false"></app-principal-button>
+
+        <app-principal-button [title]="acceptButton" [primary]="true" (click)="createTicket()"></app-principal-button>
+    </div>
+
 </div>
-
-<app-principal-title [title]="titleForm"></app-principal-title>
-
-<div class="container-form"> 
-    
-    <mat-card class="card-form space-between">
-        <form class="items" action="">
-            <div class="item">
-                <mat-form-field class="full-width">
-                    <mat-label>Titulo</mat-label>
-                    <input matInput placeholder="Ingrese titulo de la solicitud" value="">
-                </mat-form-field>
-            </div>
-            <div class="item">
-                <mat-form-field class="full-width">
-                    <mat-label>Solicitante</mat-label>
-                    <mat-select [(ngModel)]="selectedPetitioner" name="petitioner">
-                        <mat-option *ngFor="let p of petitioners" [value]="p">
-                            {{p.description}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-            <div class="item">
-                <mat-form-field class="full-width">
-                    <mat-label>Lugar</mat-label>
-                    <mat-select [(ngModel)]="selectedAreas" name="area">
-                        <mat-option *ngFor="let a of areas" [value]="a">
-                            {{a.description}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-            <div class="item">
-                <mat-form-field class="full-width">
-                    <mat-label>Tipo</mat-label>
-                    <mat-select [(ngModel)]="selectedType" name="type">
-                        <mat-option *ngFor="let t of types" [value]="t">
-                            {{t.description}}
-                        </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-            <div class="item">
-                <mat-form-field class="full-width">
-                    <mat-label>Email adicionales</mat-label>
-                    <input matInput placeholder="Ingrese mail adicional" value="">
-                </mat-form-field>
-            </div>
-            <div class="item">
-                <mat-form-field class="full-width">
-                    <mat-label>Descripción</mat-label>
-                    <textarea matInput
-                        cdkTextareaAutosize
-                        #autosize="cdkTextareaAutosize"
-                        cdkAutosizeMinRows="1"
-                        cdkAutosizeMaxRows="4"></textarea>
-                </mat-form-field>
-            </div>
-        </form>
-
-    </mat-card>
-
-    <mat-card class="card-info space-between">
-        <!-- <div class="image-ticket center"></div> -->
-    </mat-card>
-    
-</div>
-
-<div class="align-right margin-bottom">
-    <app-principal-button [title]="cleanButton" [primary]="false"></app-principal-button>
-
-    <app-principal-button [title]="acceptButton" [primary]="true"></app-principal-button>
-</div>
-
