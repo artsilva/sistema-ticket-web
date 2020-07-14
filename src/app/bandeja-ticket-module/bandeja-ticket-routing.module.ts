@@ -1,5 +1,5 @@
-import { DetailsTicketComponent } from './components/details-ticket/details-ticket.component';
-import { BandejaTicketComponent } from './components/bandeja-ticket/bandeja-ticket.component';
+import { DetailsTicketComponent } from './details-ticket/details-ticket.component';
+import { BandejaTicketComponent } from './bandeja-ticket/bandeja-ticket.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

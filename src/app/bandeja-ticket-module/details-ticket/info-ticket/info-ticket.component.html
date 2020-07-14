@@ -2,16 +2,31 @@
 
     <div class="container-flex space-between-field-p">
         <div class="wd-20">
+            <div class="letter-title">Area:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).area | titlecase}}</div>
+        </div>
+        <div class="wd-20">
             <div class="letter-title">Titulo:</div>
         </div>
         <div class="wd-30">
-            <div class="letter-desc">{{(currentTicket$ | async).title}}</div>
+            <div class="letter-desc">{{(currentTicket$ | async).title | titlecase}}</div>
+        </div>
+    </div>
+
+    <div class="container-flex space-between-field-p">
+        <div class="wd-20">
+            <div class="letter-title">Tipo:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).type | titlecase}}</div>
         </div>
         <div class="wd-20">
             <div class="letter-title">Solicitante:</div>
         </div>
         <div class="wd-30">
-            <div class="letter-desc">{{(currentTicket$ | async).petitioner}}</div>
+            <div class="letter-desc">{{(currentTicket$ | async).petitioner | titlecase}}</div>
         </div>
     </div>
 
@@ -20,16 +35,16 @@
             <div class="letter-title">Estado:</div>
         </div>
         <div class="wd-30">
-            <div class="letter-desc">{{(currentTicket$ | async).status}}</div>
+            <div class="letter-desc">{{(currentTicket$ | async).status | titlecase}}</div>
         </div>
     </div>
-
-    <div class="container-flex space-between-field-p">
+    
+    <div class="container-flex space-between-field-p" *ngIf="(currentTicket$ | async).statusreason">
         <div class="wd-20">
             <div class="letter-title">Motivo:</div>
         </div>
         <div class="wd-75">
-            <div class="letter-desc">{{(currentTicket$ | async).reason}}</div>
+            <div class="letter-desc">{{(currentTicket$ | async).statusreason}}</div>
         </div>
     </div>
 
@@ -44,13 +59,4 @@
     
 </div>
 
-<!-- id: number;
-  status: string;
-  title: string;
-  tech: string;
-  petitioner: string;
-  creation: string;
-  expire: string;
-  action: string;
-  details: string; -->
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-principal-button',
@@ -13,9 +13,18 @@ export class PrincipalButtonComponent implements OnInit {
   @Input()
   primary: boolean;
 
+  @Input()
+  disable: boolean;
+
+  @Output()
+  eventButton = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  buttonPressed() {
+    this.eventButton.emit(true);
+  }
 }

@@ -1,5 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './components/loading/loading.component';
-import { TicketService } from './services/tiket/ticket.service';
 import { SelectionCardComponent } from './components/selection-card/selection-card.component';
 import { PrincipalButtonComponent } from './components/principal-button/principal-button.component';
 import { MaterialModule } from './../material-module/material.module';
@@ -21,7 +21,8 @@ import { GeneralUploadfileComponent } from './components/general-uploadfile/gene
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ], exports: [
     PrincipalButtonComponent,
     SelectionCardComponent,
@@ -30,8 +31,6 @@ import { GeneralUploadfileComponent } from './components/general-uploadfile/gene
     LoadingComponent,
     GeneralUploadfileComponent
   ],
-  providers: [
-    TicketService
-  ]
+  providers: []
 })
 export class SharedModule { }

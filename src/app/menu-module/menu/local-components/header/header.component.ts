@@ -1,4 +1,4 @@
-import { AuthService } from './../../../../auth/services/auth.service';
+import { StorageService } from './../../../../shared/services/storage/storage.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -10,14 +10,20 @@ export class HeaderComponent implements OnInit {
 
   @Output()
   emitToggle: EventEmitter<string> = new EventEmitter<string>();
+
   title: string;
   user: string;
 
-  constructor(public auth: AuthService) { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
     this.title = 'SISTEMA TICKET';
-    this.user = 'usuario prueba';
+    this.setUserName();
+  }
+
+  setUserName() {
+    const userDetails = this.storageService.getUserSession();
+    this.user = `${userDetails.username} ${userDetails.lastnamef} ${userDetails.lastnamem}`;
   }
 
   emitClickBurger() {

@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { Ticket } from './../../../shared/models/ticket';
-import { TicketService } from '../../../shared/services/tiket/ticket.service';
+import { Ticket } from './../../shared/models/ticket';
+import { TicketService } from '../../shared/services/tiket/ticket.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

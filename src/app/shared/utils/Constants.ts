@@ -4,7 +4,7 @@ export class Constants {
         return 'No se encontraron datos';
     }
 
-    public static get MSJ_SOLITUDE_SUCCESS(): string {
+    public static get MSJ_REQUEST_SUCCESS(): string {
         return 'Solicitud creada con éxito';
     }
 
@@ -26,6 +26,10 @@ export class Constants {
 
     public static get ERROR(): 'error' {
         return 'error';
+    }
+
+    public static get INFO(): 'info' {
+        return 'info';
     }
 
 }

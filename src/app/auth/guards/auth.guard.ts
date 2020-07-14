@@ -11,17 +11,20 @@ export class AuthGuard implements CanActivate {
 
   constructor(private auth: AuthService) {}
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean> | Promise<boolean|UrlTree> | boolean {
-    return this.auth.isAuthenticated$.pipe(
-      tap(loggedIn => {
-        if (!loggedIn) {
-          this.auth.login(state.url);
-        }
-      })
-    );
+  // canActivate(
+  //   next: ActivatedRouteSnapshot,
+  //   state: RouterStateSnapshot
+  // ): Observable<boolean> | Promise<boolean|UrlTree> | boolean {
+  //   return this.auth.isAuthenticated$.pipe(
+  //     tap(loggedIn => {
+  //       if (!loggedIn) {
+  //         this.auth.login(state.url);
+  //       }
+  //     })
+  //   );
+  // }
+  canActivate() {
+    return true;
   }
 
 }

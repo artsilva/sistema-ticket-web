@@ -1,4 +1,4 @@
 export interface BasicObject {
-    code: number;
+    id: number;
     description: string;
 }

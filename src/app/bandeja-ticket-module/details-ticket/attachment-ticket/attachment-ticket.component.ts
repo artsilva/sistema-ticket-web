@@ -1,4 +1,4 @@
-import { AttachedFile } from './../../../../shared/models/file';
+import { AttachedFile } from './../../../shared/models/file';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,8 +15,7 @@ export class AttachmentTicketComponent implements OnInit {
   ngOnInit() {
     this.files = [
       { code: 1, name: 'Solicitud Inscripcion.pdf', type: 'pdf' },
-      { code: 2, name: 'foto lugar de trabajo.jpeg', type: 'image' },
-      { code: 3, name: 'Conteo de sucursales.csv', type: 'text' },
+      { code: 2, name: 'foto lugar de trabajo.jpeg', type: 'image' }
     ];
   }
 

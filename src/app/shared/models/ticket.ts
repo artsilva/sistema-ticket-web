@@ -1,37 +1,21 @@
 export class Ticket {
-  id: number;
+  id?: number;
   icon?: string;
-  status: string;
+  areaid?: number;
+  area?: string;
+  statusid: number;
+  status?: string;
+  statusreason?: string;
   title: string;
-  tech: string;
-  petitioner: string;
-  creation: string;
-  expire: string;
-  action: string;
+  usertechid?: number;
+  tech?: string;
+  petitionerid: number;
+  petitioner?: string;
+  typeid: number;
+  type?: string;
+  datecreation: Date;
+  datemodify?: Date;
+  dateexpire?: Date;
+  emails?: string;
   details: string;
-  reason?: string;
-
-  constructor(
-    id: number,
-    status: string,
-    title: string,
-    tech: string,
-    petitioner: string,
-    creation: string,
-    expire: string,
-    action: string,
-    details: string,
-    reason?: string
-  ) {
-    this.id = id;
-    this.status = status;
-    this.title = title;
-    this.tech = tech;
-    this.petitioner = petitioner;
-    this.creation = creation;
-    this.expire = expire;
-    this.action = action;
-    this.details = details;
-    this.reason = reason;
-  }
 }

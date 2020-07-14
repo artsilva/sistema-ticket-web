@@ -1,12 +1,13 @@
-<div>
+<div [formGroup]="ticketForm">
     <app-principal-title [title]="titleCards"></app-principal-title>
 
     <mat-card-subtitle>Seleccione un servicio para su solicitud.</mat-card-subtitle>
 
     <div class="cards space-between">
 
-        <app-selection-card *ngFor="let s of services" [cardTitle]="s.description" [selected]="s.selected"
-            (click)="selectionCard(s)"></app-selection-card>
+        <app-selection-card *ngFor="let a of areas" [cardTitle]="a.description" [selected]="a.selected"
+            (click)="selectionCard(a)">
+        </app-selection-card>
 
     </div>
 
@@ -15,20 +16,14 @@
     <div class="container-form">
 
         <mat-card class="card-form space-between">
-            <p class="title-letter">FORMULARIO DE SOLICITUD</p>
+            <p class="title-letter">FORMULARIO DE SOLICITUD {{areaSelected | uppercase}}</p>
             <mat-divider></mat-divider>
-            <form class="items" action="">
-                <div class="item">
-                    <mat-form-field class="full-width">
-                        <mat-label>Titulo</mat-label>
-                        <input matInput placeholder="Ingrese titulo de la solicitud" value="">
-                    </mat-form-field>
-                </div>
+            <div class="items" action="">
                 <div class="item">
                     <mat-form-field class="full-width">
                         <mat-label>Tipo Solicitud</mat-label>
-                        <mat-select [(ngModel)]="selectedReason" name="type">
-                            <mat-option *ngFor="let r of reasons" [value]="r">
+                        <mat-select name="type" formControlName="typeRequest" (selectionChange)="selectionType()">
+                            <mat-option *ngFor="let r of reqTypes" [value]="r">
                                 {{r.description}}
                             </mat-option>
                         </mat-select>
@@ -36,19 +31,31 @@
                 </div>
                 <div class="item">
                     <mat-form-field class="full-width">
-                        <mat-label>Descripción</mat-label>
-                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                            cdkAutosizeMaxRows="4"></textarea>
+                        <mat-label>Titulo  Solicitud</mat-label>
+                        <input matInput placeholder="Ingrese titulo de la solicitud" formControlName="title">
                     </mat-form-field>
                 </div>
                 <div class="item">
                     <mat-form-field class="full-width">
                         <mat-label>Email adicionales</mat-label>
-                        <input matInput placeholder="Ingrese mail adicional" value="">
+                        <input matInput placeholder="Ingrese mail adicional" formControlName="mail">
                     </mat-form-field>
                 </div>
-            </form>
-
+            </div>
+            <div class="items2">
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Descripción solicitud</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="2" formControlName="description"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="items2" *ngIf="expireDays">
+                <div class="item">
+                    <mat-card-subtitle>* Su solicitud será respondida en un máximo de {{expireDays}} días hábiles.</mat-card-subtitle>
+                </div>
+            </div>
         </mat-card>
 
         <mat-card class="card-info space-between">
@@ -83,11 +90,9 @@
         </mat-card>
 
     </div>
+</div>
+<div class="align-right margin-bottom">
+    <app-principal-button [title]="cleanButton" [primary]="false" [disable]="false" (eventButton)="clearTicket($event)"></app-principal-button>
 
-    <div class="align-right margin-bottom">
-        <app-principal-button [title]="cleanButton" [primary]="false"></app-principal-button>
-
-        <app-principal-button [title]="acceptButton" [primary]="true" (click)="createTicket()"></app-principal-button>
-    </div>
-
+    <app-principal-button [title]="acceptButton" [primary]="true" [disable]="!ticketForm.valid" (eventButton)="createTicket($event)"></app-principal-button>
 </div>

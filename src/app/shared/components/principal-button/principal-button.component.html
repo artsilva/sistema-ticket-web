@@ -1,3 +1,3 @@
-<button mat-raised-button color="primary" *ngIf="primary">{{title}}</button>
+<button mat-raised-button color="primary" *ngIf="primary" [disabled]="disable" (click)="buttonPressed()">{{title}}</button>
 
-<button mat-raised-button color="basic" *ngIf="!primary">{{title}}</button>
+<button mat-raised-button color="basic" *ngIf="!primary" [disabled]="disable" (click)="buttonPressed()">{{title}}</button>

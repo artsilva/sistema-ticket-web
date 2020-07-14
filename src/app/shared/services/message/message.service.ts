@@ -17,6 +17,7 @@ export class MessageService {
       toast: true,
       position: 'top-end',
       showConfirmButton: false,
+      confirmButtonText: 'Aceptar',
       timer,
     });
 
@@ -36,8 +37,9 @@ export class MessageService {
       title,
       html,
       icon,
-      confirmButtonColor: '#009999',
+      // confirmButtonColor: '#009999',
       allowOutsideClick: false,
+      confirmButtonText: 'Aceptar',
     });
   }
 
@@ -49,9 +51,11 @@ export class MessageService {
       inputAttributes: {
         'aria-label': 'Ingrese el motivo aquí',
       },
-      showCancelButton: false,
+      // showCancelButton: true,
       allowOutsideClick: false,
       allowEscapeKey: false,
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar',
       onOpen: () => {
         Swal.disableButtons();
         Swal.getInput().addEventListener('keyup', (e) => {
@@ -64,4 +68,19 @@ export class MessageService {
       },
     });
   }
+
+  async confirmDialog(title: string, text: string, icon: 'error' | 'warning' | 'success' | 'info') {
+    return Swal.fire({
+      title,
+      text,
+      icon,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar',
+      allowOutsideClick: false,
+    });
+  }
+
 }
