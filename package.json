@@ -1,9 +1,11 @@
 {
   "name": "sistema-ticket-web",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Arturo Silva",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:prod": "ng serve --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

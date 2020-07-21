@@ -76,5 +76,17 @@ export class AppComponent {
       'file-text-blue',
       this.domSanitizer.bypassSecurityTrustResourceUrl(Icons.BLUE_FILE_TEXT)
     );
+    this.matIconRegistry.addSvgIcon(
+      'sla-green',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(Icons.GREEN_SLA)
+    );
+    this.matIconRegistry.addSvgIcon(
+      'sla-yellow',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(Icons.YELLOW_SLA)
+    );
+    this.matIconRegistry.addSvgIcon(
+      'sla-red',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(Icons.RED_SLA)
+    );
   }
 }

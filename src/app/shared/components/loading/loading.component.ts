@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadingComponent implements OnInit {
 
+  color = 'accent';
+  mode = 'indeterminate';
+  value = 50;
+  strokeWidth = '20';
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  color = 'accent';
-  mode = 'indeterminate';
-  value = 50;
-  strokeWidth="20"
 
 }

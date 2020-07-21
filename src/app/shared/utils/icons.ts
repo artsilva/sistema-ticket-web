@@ -31,6 +31,18 @@ export class Icons {
         return '../../../assets/icons/misc/status-red-18dp.svg';
     }
 
+    public static get GREEN_SLA(): string {
+        return '../../../assets/icons/misc/sla-green-18dp.svg';
+    }
+
+    public static get YELLOW_SLA(): string {
+        return '../../../assets/icons/misc/sla-yellow-18dp.svg';
+    }
+
+    public static get RED_SLA(): string {
+        return '../../../assets/icons/misc/sla-red-18dp.svg';
+    }
+
     public static get GREEN_PLAY(): string {
         return '../../../assets/icons/actions/play_circle-green-18dp.svg';
     }

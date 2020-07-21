@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 
 import { BandejaTicketRoutingModule } from './bandeja-ticket-routing.module';
 import { FormsModule } from '@angular/forms';
+import { SlaCardComponent } from './bandeja-ticket/sla-card/sla-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     DetailsTicketComponent,
     ChatDetailsComponent,
     InfoTicketComponent,
-    AttachmentTicketComponent
+    AttachmentTicketComponent,
+    SlaCardComponent
   ],
   imports: [
     CommonModule,
