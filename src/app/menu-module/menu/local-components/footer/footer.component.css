@@ -1,0 +1,17 @@
+
+footer {
+    height: 50px;
+    background: PapayaWhip;
+    width: 100%;
+  }
+  
+  
+  /**** Trick: ****/
+  body {
+    display: table;
+    width: 100%; 
+  }
+  
+  footer {
+     display: table-row;
+  }

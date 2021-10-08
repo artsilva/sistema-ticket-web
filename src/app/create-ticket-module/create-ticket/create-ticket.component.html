@@ -1,1 +1,98 @@
-<p>create-ticket works!</p>
+<div [formGroup]="ticketForm">
+    <app-principal-title [title]="titleCards"></app-principal-title>
+
+    <mat-card-subtitle>Seleccione un servicio para su solicitud.</mat-card-subtitle>
+
+    <div class="cards space-between">
+
+        <app-selection-card *ngFor="let a of areas" [cardTitle]="a.description" [selected]="a.selected"
+            (click)="selectionCard(a)">
+        </app-selection-card>
+
+    </div>
+
+    <app-principal-title [title]="titleForm"></app-principal-title>
+
+    <div class="container-form">
+
+        <mat-card class="card-form space-between">
+            <p class="title-letter">FORMULARIO DE SOLICITUD {{areaSelected | uppercase}}</p>
+            <mat-divider></mat-divider>
+            <div class="items" action="">
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Tipo Solicitud</mat-label>
+                        <mat-select name="type" formControlName="typeRequest" (selectionChange)="selectionType()">
+                            <mat-option *ngFor="let r of reqTypes" [value]="r">
+                                {{r.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Titulo  Solicitud</mat-label>
+                        <input matInput placeholder="Ingrese titulo de la solicitud" formControlName="title">
+                    </mat-form-field>
+                </div>
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Email adicionales</mat-label>
+                        <input matInput placeholder="Ingrese mail adicional" formControlName="mail">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="items2">
+                <div class="item">
+                    <mat-form-field class="full-width">
+                        <mat-label>Descripción solicitud</mat-label>
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="2" formControlName="description"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="items2" *ngIf="expireDays">
+                <div class="item">
+                    <mat-card-subtitle>* Su solicitud será respondida en un máximo de {{expireDays}} días hábiles.</mat-card-subtitle>
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card class="card-info space-between">
+            <p class="title-letter">DOCUMENTOS OBLIGATORIOS SOLICITUD</p>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle>Haga click en un documento para descargar en su computador</mat-card-subtitle>
+            <div>
+                <app-attachment-card *ngFor="let file of files" [file]="file"></app-attachment-card>
+            </div>
+            <p class="title-letter">SUBIDA DE DOCUMENTOS</p>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle></mat-card-subtitle>
+            <div>
+                <!-- <input #csvInput hidden="true" type="file" onclick="this.value=null" (change)="csvInputChange($event)"
+                    accept=".csv" />
+                <button mat-flat-button color="primary" (click)="csvInput.click()">Adjuntar</button> -->
+                <mat-expansion-panel [expanded]="false">
+                <!-- <mat-expansion-panel [expanded]="this.solicitudService.getDocumentos.length > 0"> -->
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Documentos
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Ingresar documentación para solicitud
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                
+                    <app-general-uploadfile></app-general-uploadfile>
+                
+                  </mat-expansion-panel>
+            </div>
+        </mat-card>
+
+    </div>
+</div>
+<div class="align-right margin-bottom">
+    <app-principal-button [title]="cleanButton" [primary]="false" [disable]="false" (eventButton)="clearTicket($event)"></app-principal-button>
+
+    <app-principal-button [title]="acceptButton" [primary]="true" [disable]="!ticketForm.valid" (eventButton)="createTicket($event)"></app-principal-button>
+</div>

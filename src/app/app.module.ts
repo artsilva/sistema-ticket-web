@@ -1,9 +1,10 @@
+import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './menu-module/menu.module';
 import { LoginModule } from './login-module/login.module';
 import { MaterialModule } from './material-module/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
     LoginModule,
-    MenuModule
+    MenuModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

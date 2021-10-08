@@ -8,3 +8,18 @@ h1.app-name {
     margin-left: 8px;
     letter-spacing: 1px;
 }
+
+.username {
+    margin-right: 10px;
+    letter-spacing: 1px;
+}
+
+.toolbar {
+    height: 8vh;
+}
+
+@media (min-height: 800px) {
+    .toolbar {
+        height: 5vh;
+    }
+}

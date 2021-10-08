@@ -1,0 +1,77 @@
+<app-loading *ngIf="showLoading"></app-loading>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="icon">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon class="status-icon" [svgIcon]="element.icon"></mat-icon>
+    </td>
+  </ng-container>
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> estado </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> titulo </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="tech">
+    <th mat-header-cell *matHeaderCellDef> técnico </th>
+    <td mat-cell *matCellDef="let element"> {{element.tech | titlecase}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="petitioner">
+    <th mat-header-cell *matHeaderCellDef> solicitante </th>
+    <td mat-cell *matCellDef="let element"> {{element.petitioner | titlecase}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="datecreation">
+    <th mat-header-cell *matHeaderCellDef> creación </th>
+    <td mat-cell *matCellDef="let element"> {{element.datecreation | date: 'dd/MM/yyyy'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="datemodify">
+    <th mat-header-cell *matHeaderCellDef> modificado </th>
+    <td mat-cell *matCellDef="let element"> {{element.datemodify  | date: 'dd/MM/yyyy hh:mm:ss'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dateexpire">
+    <th mat-header-cell *matHeaderCellDef> vencimiento </th>
+    <td mat-cell *matCellDef="let element"> {{element.dateexpire | date: 'dd/MM/yyyy hh:mm:ss'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>acción</th>
+    <td mat-cell *matCellDef="let row">
+      <mat-icon class="icon-effect" matTooltip="Iniciar Solicitud" matTooltipClass="tooltip-blue" svgIcon="play-green"
+        (click)="changeStatusTicket(row, 'start')" *ngIf="row.status !== 'En Proceso' && row.status !== 'Detenido'">
+      </mat-icon>
+      <mat-icon class="icon-effect" matTooltip="Pausar Solicitud" matTooltipClass="tooltip-blue" svgIcon="pause-yellow"
+        (click)="changeStatusTicket(row, 'pause')"
+        *ngIf="row.status !== 'En Espera' && row.status !== 'Sin Asignar'  && row.status !== 'Detenido'"></mat-icon>
+      <mat-icon class="icon-effect" matTooltip="Detener Solicitud" matTooltipClass="tooltip-blue" svgIcon="stop-red"
+        (click)="changeStatusTicket(row, 'stop')" *ngIf="row.status !== 'Detenido'"></mat-icon>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="details">
+    <th mat-header-cell *matHeaderCellDef> Detalles </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-icon class="details-icon" svgIcon="forward-white" (click)="viewDetails(row)"></mat-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

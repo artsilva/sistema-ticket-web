@@ -1,0 +1,22 @@
+.card-info {
+    width: 60%
+}
+
+.card-chat {
+    width: 40%;
+    margin-left: 1.2em !important;
+    max-height: 585px;
+}
+
+mat-form-field {
+    width: 80%;
+    margin-right: 12px;
+}
+
+div .chat {
+    width: 100%;
+    border: 1px lightgray solid;
+    background-color: lightsteelblue;
+    border-radius: 10px;
+}
+

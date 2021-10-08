@@ -1,0 +1,17 @@
+<div class="upload-wrapper">
+
+  <div class="dropzone" appDropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)">
+    <mat-icon class="icon icon-backup color-clinica-primary" svgIcon="backup"></mat-icon>
+    <h3 class="text-title color-clinica-primary">Drag & Drop</h3>
+    <p class="text-description">Arrastrar los documentos que desea enviar</p>
+  </div>
+  
+  <div class="files">
+      <mat-card class="files-dropped" *ngFor="let file of files; let i = index">
+          <mat-icon class="icon-file" svgIcon="description"></mat-icon>
+          <span class="files-dropped-text">{{file.name}}</span>
+          <mat-icon class="icon-cancel" svgIcon="cancel" (click)="deleteFile(i)"></mat-icon>
+      </mat-card>
+  </div>
+
+</div>

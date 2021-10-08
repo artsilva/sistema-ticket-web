@@ -1,0 +1,16 @@
+<mat-card class="card">
+
+    <div class="container-flex" *ngIf="file.type==='pdf'">
+        <mat-icon class="margin-icon" svgIcon="file-pdf-blue" (click)="download()"></mat-icon>
+        <div>{{ file.name }}</div>
+    </div>
+    <div class="container-flex" *ngIf="file.type==='image'">
+        <mat-icon class="margin-icon" svgIcon="file-image-blue" (click)="download()"></mat-icon>
+        <div>{{ file.name }}</div>
+    </div>
+    <div class="container-flex" *ngIf="file.type==='text'">
+        <mat-icon class="margin-icon" svgIcon="file-text-blue" (click)="download()"></mat-icon>
+        <div>{{ file.name }}</div>
+    </div>
+    
+</mat-card>

@@ -1,7 +1,3 @@
-<!-- <header>
-    <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
-    <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
-  </header> -->
 <div class="flex-container">
 
     <mat-card class="flex-item">
@@ -14,25 +10,32 @@
 
             <h1>Bienvenido</h1>
 
-            <form class="container-login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <form class="container-login" [formGroup]="loginForm">
 
                 <mat-form-field class="space-component">
                     <mat-label>Usuario</mat-label>
-                    <input matInput placeholder="Ingrese su usuario" formControlName="user">
+                    <input matInput placeholder="Ingrese su usuario" formControlName="username">
                 </mat-form-field>
 
                 <mat-form-field class="space-component">
                     <mat-label>Password</mat-label>
-                    <input type="password" matInput placeholder="Ingrese su constraseña" formControlName="password">
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="pass">
+                    <mat-icon mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar password'">
+                        {{hide ? 'visibility_off' : 'visibility'}}
+                    </mat-icon>
                 </mat-form-field>
 
-                <small class="msj-error" *ngIf="(loginForm.controls.password.touched && loginForm.controls.password.errors?.required)
-                    || loginForm.controls.user.touched && loginForm.controls.user.errors?.required">
+                <small class="msj-error" *ngIf="(loginForm.controls.pass.touched && loginForm.controls.pass.errors?.required)
+                    || loginForm.controls.username.touched && loginForm.controls.username.errors?.required">
                     Ingrese ambos campos antes de continuar.
                 </small>
 
+                <small class="msj-error" *ngIf="errorLogin">
+                    Usuario y/o contraseña incorrectos..
+                </small>
+                
                 <div class="space-component">
-                    <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Log In</button>
+                    <button mat-raised-button color="primary" [disabled]="!loginForm.valid" (click)="onSubmit()">Log In</button>
                 </div>                
 
             </form>

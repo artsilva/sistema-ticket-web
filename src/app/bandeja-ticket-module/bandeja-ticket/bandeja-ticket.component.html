@@ -1,0 +1,21 @@
+<app-principal-title [title]="title"></app-principal-title>
+
+<mat-divider></mat-divider>
+
+<div class="cards space-between">
+
+    <app-selection-card [cardNumber]="q.quantity" [cardTitle]="q.description" *ngFor="let q of quantityAreas"></app-selection-card>
+
+</div>
+
+<!-- <div>
+
+    <app-sla-card></app-sla-card>
+
+</div> -->
+
+<div>
+
+    <app-table-ticket></app-table-ticket>
+
+</div>

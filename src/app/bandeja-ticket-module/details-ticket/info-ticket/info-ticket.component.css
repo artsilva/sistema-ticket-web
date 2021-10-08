@@ -1,0 +1,22 @@
+div .space-between-field-p {
+    padding: 16px;
+}
+
+div .space-between-field-s {
+    padding: 0px 16px 16px 16px;
+}
+
+.letter-title {
+    /* color: #3F51B5; */
+    color: cornflowerblue;
+    font-weight: 550;
+}
+
+.letter-desc {
+    color: gray;
+}
+
+.info-content {
+    text-align: justify;
+    text-justify: inter-word;
+}

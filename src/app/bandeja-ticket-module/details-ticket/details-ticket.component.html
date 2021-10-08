@@ -1,0 +1,35 @@
+<app-principal-title [title]="title"></app-principal-title>
+
+<div class="container-flex space-between">
+
+    <div class="card-info">
+
+        <mat-card>
+            <p class="title-letter">INFORMACIÓN DE LA SOLUCITUD</p>
+            <mat-divider></mat-divider>
+            <app-info-ticket></app-info-ticket>
+        </mat-card>
+
+        <mat-card class="space-between">
+            <p class="title-letter">DOCUMENTOS ADJUNTOS</p>
+            <mat-divider></mat-divider>
+            <mat-card-subtitle>Haga click en una tarjeta para descargar archivo adjunto</mat-card-subtitle>
+            <app-attachment-ticket></app-attachment-ticket>
+        </mat-card>
+
+    </div>
+    
+    <mat-card class="card-chat">
+
+        <p class="title-letter">CENTRO DE MENSAJES</p>
+        <mat-divider></mat-divider>
+        <mat-card-subtitle>Aquí puede ponerse en contacto con el usuario del Ticket</mat-card-subtitle>
+        <div class="chat">
+            <app-chat-details></app-chat-details>
+        </div>
+
+    </mat-card>
+
+</div>
+
+<!-- <p>{{currentTicket$ | async | json}}</p> -->

@@ -1,39 +1,65 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .is-mobile .toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-  }
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #E2EAEA;
+}
 
-  .is-mobile .sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+.is-mobile .toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;  
+}
+
+.is-mobile .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-  }
+  flex: 1 0 auto;  
+  position: absolute;
+}
 
-  a.menu {
-    color: gray;
-    font-weight: 550;
-  }  
-  
-  .sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+a.menu {
+  color: white;
+  font-weight: 550;  
+}
+
+mat-sidenav {
+  /* background-color: rgba(10, 14, 42, 0.794); */
+  background-image: linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% );
+  color: white;
+}
+
+.icon {
+  padding-right: 5px;
+  color: white;
+}
+
+.header-img {
+  width: 100%;
+  height: 200px;
+  background: url('http://www.kodhus.com/freecourse-images/header-image.jpg');
+  background-size: cover;
+}
+
+mat-divider {
+  background-color:rgba(60, 63, 85, 0.479);
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+  /* min-height: 800px; */
+  min-height: 100vh;
+}
+
+@media (min-height: 800px) {
+  .sidenav-container {
     flex: 1;
-    min-height: 600px;
+    min-height: 95vh;
   }
-  
-  .icon-padding-right {
-    padding-right: 5px;
-  }
-  
-  
+}

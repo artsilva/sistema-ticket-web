@@ -1,0 +1,62 @@
+<div>
+
+    <div class="container-flex space-between-field-p">
+        <div class="wd-20">
+            <div class="letter-title">Area:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).area | titlecase}}</div>
+        </div>
+        <div class="wd-20">
+            <div class="letter-title">Titulo:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).title | titlecase}}</div>
+        </div>
+    </div>
+
+    <div class="container-flex space-between-field-p">
+        <div class="wd-20">
+            <div class="letter-title">Tipo:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).type | titlecase}}</div>
+        </div>
+        <div class="wd-20">
+            <div class="letter-title">Solicitante:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).petitioner | titlecase}}</div>
+        </div>
+    </div>
+
+    <div class="container-flex space-between-field-p">
+        <div class="wd-20">
+            <div class="letter-title">Estado:</div>
+        </div>
+        <div class="wd-30">
+            <div class="letter-desc">{{(currentTicket$ | async).status | titlecase}}</div>
+        </div>
+    </div>
+    
+    <div class="container-flex space-between-field-p" *ngIf="(currentTicket$ | async).statusreason">
+        <div class="wd-20">
+            <div class="letter-title">Motivo:</div>
+        </div>
+        <div class="wd-75">
+            <div class="letter-desc">{{(currentTicket$ | async).statusreason}}</div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <div class="wd-95 space-between-field-p letter-title">Detalles:</div>
+        </div>
+        <div class="info-content">
+            <div class="wd-95 space-between-field-s letter-desc">{{(currentTicket$ | async).details}}</div>
+        </div>
+    </div>
+    
+</div>
+
+

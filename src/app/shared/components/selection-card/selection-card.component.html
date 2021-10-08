@@ -1,0 +1,16 @@
+<mat-card [ngClass]="selected === true ? 'card-selected' : 'card'">
+
+    <div class="margin-iconletter">
+        <span [ngClass]="selected === true ? 'i-circle-selected' : 'i-circle'">{{ letter | titlecase}}</span>
+    </div>
+    
+    <div>
+        <div *ngIf="cardNumber" class="number-card">
+            {{ cardNumber }}
+        </div>
+        <div>
+            <span [ngClass]="selected === true ? 'text-card-selected' : 'text-card'">{{ cardTitle | titlecase }}</span>
+        </div>            
+    </div>
+
+</mat-card>
